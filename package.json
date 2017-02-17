@@ -1,0 +1,25 @@
+{
+  "name": "gulp-automatic-packaging",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rev": "^7.1.2",
+    "gulp-rev-collector": "^1.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KidneyFlower/gulp-automatic-packaging.git"
+  },
+  "author": "KidneyFlower",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KidneyFlower/gulp-automatic-packaging/issues"
+  },
+  "homepage": "https://github.com/KidneyFlower/gulp-automatic-packaging#readme"
+}
