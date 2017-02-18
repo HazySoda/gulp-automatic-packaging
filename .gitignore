@@ -3,3 +3,7 @@
 src/
 dist/
 rev/
+node_modules
+!node_modules/gulp-rev
+!node_modules/gulp-rev-collector
+
