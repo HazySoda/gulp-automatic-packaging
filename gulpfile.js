@@ -5,6 +5,10 @@ var revCollector = require('gulp-rev-collector');
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
+var zip = require('gulp-zip');
+var gulpSequence = require('gulp-sequence');
+var clean = require('gulp-clean');
+var date = new Date().toLocaleDateString().split('-').join('');
 
 gulp.task('css', function () {
     return gulp.src('src/**/*.css', {base: 'src'})
@@ -48,6 +52,15 @@ gulp.task('rev', function () {
         .pipe( gulp.dest('dist') );
 });
 
-gulp.task('default', function() {
-
+gulp.task('zip', function () {
+    return gulp.src('dist/**/*.*')
+        .pipe(zip('publish_' + date + '.zip'))
+        .pipe(gulp.dest('zip'))
 });
+
+gulp.task("clean", function(){
+    return gulp.src(['dist','zip','rev'])
+        .pipe(clean());
+})
+
+gulp.task('default', gulpSequence('clean', ['css', 'js'], 'rev', 'zip'));
