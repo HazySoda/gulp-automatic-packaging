@@ -33,7 +33,7 @@ gulp.task('css', function () {
         .pipe( rev.manifest() )
         .pipe( gulp.dest( 'rev/css' ) );
 });
- 
+
 gulp.task('js', function () {
     return gulp.src('src/**/*.js', {base: 'src'})
         .pipe(uglify())
@@ -45,7 +45,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('rev', function () {
-    return gulp.src(['rev/**/*.json', 'src/**/*.aspx'])
+    return gulp.src(['rev/**/*.json', 'src/**/*.html'])
         .pipe( revCollector({
             replaceReved: true
         }) )
